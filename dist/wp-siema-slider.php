@@ -1,8 +1,8 @@
 <?php
 /**
 * Plugin Name: WP Siema Slider
-* Plugin URI: https://infinus.ca
-* Description: Siema slider shortcode and slide CPT for Wordpress
+* Plugin URI: https://github.com/bpolack/WP-Siema-Slider
+* Description: Siema slider shortcode and slide custom post type for Wordpress
 * Version: 1.0.1
 * Author: Braighton Polack
 **/
