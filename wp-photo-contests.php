@@ -1,31 +1,41 @@
 <?php
 /**
-* Plugin Name: WP Siema Slider
-* Plugin URI: https://github.com/bpolack/WP-Siema-Slider
-* Description: Siema slider shortcode and slide custom post type for Wordpress
-* Version: 1.0.1
+* Plugin Name: WP Photo Contests
+* Plugin URI: https://github.com/bpolack/WP-Photo-Contests
+* Description: Photo contests plugin for user testing.
+* Version: 0.1.0
 * Author: Braighton Polack
 **/
 
+// Project Constants
+define("PREFIX", "jw");
+define("PLUGIN_URL", plugin_dir_url( __FILE__ )); // includes trailing slash
+define("ENQUEUE_URL", plugin_dir_url( __FILE__ ) . 'src');
+define("INCLUDES_PATH", plugin_dir_path( __FILE__ ) . '/includes');
+define("ENQUEUE_PATH", plugin_dir_path( __FILE__ ) . '/src');
+
 //Register scripts and styles
 function wp_siema_register_scripts() {
-    wp_register_style( 'wp-siema-style', plugins_url( '/wp-siema-slider.min.css', __FILE__ ), array(), '1.0.0', 'all' );
-    wp_register_script( 'siema-slider', plugins_url( '/siema.min.js', __FILE__ ), '', '', true );
-    wp_register_script( 'wp-siema-script', plugins_url( '/wp-siema-script.min.js', __FILE__ ), '', '1.0.0', true );
+    wp_register_style( 'wp-siema-style', ENQUEUE_URL . '/wp-siema-slider.min.css', array(), filemtime(ENQUEUE_PATH . '/wp-siema-slider.min.css'), false );
+    wp_register_script( 'siema-slider', ENQUEUE_URL . '/siema.min.js', array(), '', true );
+    wp_register_script( 'wp-siema-script', ENQUEUE_URL . '/wp-siema-script.min.js', array(), filemtime(ENQUEUE_PATH . '/wp-siema-script.min.js'), true );
 }
 add_action( 'wp_enqueue_scripts', 'wp_siema_register_scripts' );
 
+// Include required php files
+require('includes/backend.php');
+require('includes/shortcodes.php');
 
 //Register Post Type and Taxonomy
 function cptui_register_my_cpts_siema_slide() {
 
 	$labels = [
-		"name" => __( "Siema Sliders", "gp-child" ),
-		"singular_name" => __( "Siema Slider", "gp-child" ),
+		"name" => __( "Photo Contests", "gp-child" ),
+		"singular_name" => __( "Photo Contest", "gp-child" ),
 	];
 
 	$args = [
-		"label" => __( "Siema Sliders", "gp-child" ),
+		"label" => __( "Photo Contests", "gp-child" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -42,12 +52,12 @@ function cptui_register_my_cpts_siema_slide() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "siema_slide", "with_front" => true ],
+		"rewrite" => [ "slug" => "jw_photo_contest", "with_front" => true ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail" ],
 	];
 
-	register_post_type( "siema_slide", $args );
+	register_post_type( "jw_photo_contest", $args );
 }
 add_action( 'init', 'cptui_register_my_cpts_siema_slide' );
 

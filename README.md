@@ -1,23 +1,21 @@
-# WP Siema Slider
+# WP Photo Contests
 
-Wordpress plugin that implements siema slider via shortcode. Uses a custom post type + taxonomy to create each slide. Each slide in a slider is maintained at equal heights using javascript. Supports SEO friendly image backgrounds and custom html content.
+Simple contest plugin being used to test different photo contest techniques
 
 ## Installation
 
 1. Download zip file of latest release
-2. Install plugin in Wordpress (Tested with up to WP 5.3.2)
+2. Install plugin in Wordpress (Tested up to WP 5.7)
 
 ## Plugin Usage
 
-1. Create new slides in Wordpress using the "Siema Sliders" post type
-2. Upload a feature image for use as a background image
-3. Add content to slides using the Wordpress content editor
-4. Categorize slides using the "Slider Category" taxonomy to group for frontend display
-5. Create your slider using the below shortcode and optional attributes wherever you like on your website
+1. Create new contests in Wordpress using the "Photo Contest" post type
+2. Upload images as needed, change default fields.
+3. Add shortcode to any page.
 
 Shortcode template:
 ```
-[wp_siema_slider slider_category_slug="category-slug" numresults=8 orderby="title" order="ASC"]
+[wp_photo_contest contest_id="#"]
 ```
 
 ### Prerequisites
@@ -30,9 +28,9 @@ Wordpress is required
 
 ## Authors
 
-* **[Braighton Polack](https://github.com/bpolack/)** - *Initial work and testing* 
+* **[Braighton Polack](https://github.com/bpolack/)**  
 
-See also the list of [contributors](https://github.com/bpolack/WP-Siema-Slider/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/bpolack/WP-Photo-Contests/contributors) who participated in this project.
 
 ## License
 
