@@ -1,0 +1,118 @@
+/* Shortcode Layouts */
+.wp-photo-contest-body {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.wp-photo-contest-instructions, .wp-photo-contest-form-details {
+    margin-top: 20px;
+}
+.wp-photo-contest-form-details {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wp-photo-contest-form-details.active {
+    display: flex;
+}
+.contest-form-half {
+    width: 48%;
+    margin-bottom: 20px;
+}
+.contest-form-full {
+    width: 100%;
+    text-align: center;
+}
+.voter-name, .voter-email {
+    color: #fff!important;
+    font-size: 19px!important;
+    padding: 8px 20px!important;
+}
+.voter-submit {
+    margin-top: 10px;
+    cursor: pointer;
+    border:0;
+    background-color: #f2f2f2;
+    transition: 0.3s ease background-color;
+    color: #333;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    font-size: 18px;
+}
+.voter-submit:hover {
+    background-color: #dddddd;
+}
+
+/* Slider CSS */
+.wp-siema-wrapper {
+    position: relative;
+}
+.siema-slide {
+    position: relative;
+}
+.siema-slide-image img {
+    width: 100%;
+    height: auto;
+}
+.siema-slide-content-wrapper {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 35px;
+    background-color: rgba(0,0,0,0.55);
+}
+.siema-slide-content {
+    color:#fff;
+}
+.siema-slide-content p {
+    font-size:17px;
+    line-height: 1.7;
+}
+.siema-slide-content h3 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color:#fff;
+    line-height: 1.4;
+}
+.dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+.dots .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 .55rem;
+    border: 1px solid #e9e9e9;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dots .dot.active {
+    background-color: #e9e9e9;
+}
+
+/* Star Ratings */
+.star-rating span {
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    line-height: 1;
+    font-size: 28px;
+    margin: 0px 2px;
+}
+.star-rating span::before {
+    content: "★"; 
+    color: #fff;
+}
+.star-rating span.active::before {
+    color: rgb(235, 196, 25);
+}
+.star-rating span svg {
+    width:100%;
+    height:auto;
+}

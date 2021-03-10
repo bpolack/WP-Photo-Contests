@@ -34,27 +34,10 @@ class SiemaWithDots extends Siema {
         }
     }
 }
-  
-//Sets all slides in a set to the same height
-function siemaEqualHeights(siemaSlider) {
-    let maxHeight = 0;
-    let slides = siemaSlider.querySelectorAll('.siema-slide-content');
-    
-    //Get tallest slide content element
-    slides.forEach(function(slide) {
-        if (slide.clientHeight > maxHeight) {
-            maxHeight = slide.clientHeight;
-        }
-    });
-    slides.forEach(function(slide) {
-        slide.style.minHeight = maxHeight + 'px';
-    });
-}
 
 //Initialize new siema sliders
 function siemaInit(siemaSlider) {
     console.log('Siema Slider Initialized 🥑');
-    siemaEqualHeights(siemaSlider);
 }
 
 //Supports multiple slider instances per page
@@ -67,10 +50,10 @@ siemas.forEach(function(siema) {
         easing: 'ease-out',
         perPage: 1,
         startIndex: 0,
-        draggable: true,
+        draggable: false,
         multipleDrag: true,
         threshold: 20,
-        loop: true,
+        loop: false,
         onInit: function(){
             this.addDots();
             this.updateDots();
@@ -82,11 +65,6 @@ siemas.forEach(function(siema) {
     });
 
     //Set timeout function for autoplay
-    setInterval(() => thisSiema.next(), 7000);
-
-    //Update content heights on window resize
-    window.addEventListener('resize', function(event){
-        siemaEqualHeights(siema);
-    });
+    //setInterval(() => thisSiema.next(), 7000);
 
 });
